@@ -14,7 +14,7 @@ def find_terms(nums, target=2020):
 '''
   time complexity n
 '''
-def part_1(nums, target=2020):
+def part_1(nums):
     a, b = find_terms(nums)
     return a * b
 
@@ -23,7 +23,7 @@ def part_1(nums, target=2020):
 '''
 def part_2(nums, target=2020):
     for i, v in enumerate(nums):
-        a, b = find_terms(nums[:i] + nums[i+1:], target = 2020 - v)
+        a, b = find_terms(nums[:i] + nums[i+1:], target - v)
         if a + b != 0:
             return v * a * b
 
